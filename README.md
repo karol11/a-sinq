@@ -165,7 +165,7 @@ The `a_sinq::slot` allows to make data providers:
 
 #### Example:
 
-Async data provider that takes two other async data providers that provide streams of `optional<A>` and `optional<B>` (where `nullopt` signals the end of stream), and returns their inner-join in the form of the stream of `optional<pair<A, B>>`
+This async data provider takes two other async data providers that provide streams of `optional<A>` and `optional<B>` (where `nullopt` signals the end of stream), and returns their inner-join in the form of the stream of `optional<pair<A, B>>`
 ```C++
 template<typename T> using listener = std::function<void(optional<T>)>;
 template<typename T> using stream = std::function<listener(T)>;
@@ -207,8 +207,7 @@ Where
 
 Slots are useful for building the chained data providers and for creating state machines, because `await` in the same `slot` can be called with different lambdas.
 
+See more in `examples/slot_example.cpp`.
 ## Structure
 - `include/a_sinq.h` - single header library itself,
-- `docs/*` - TBD,
-- `examples/*` - TBD,
-- `tests/*` - TBD,
+- `examples/*` - demonstration on how to use a-sinq primitives,
